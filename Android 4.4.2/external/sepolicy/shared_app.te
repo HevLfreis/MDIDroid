@@ -1,0 +1,31 @@
+###
+### Apps signed with the shared key.
+###
+
+type shared_app, domain;
+permissive shared_app;
+app_domain(shared_app)
+platform_app_domain(shared_app)
+# Access the network.
+net_domain(shared_app)
+# Access bluetooth.
+bluetooth_domain(shared_app)
+unconfined_domain(shared_app)
+
+# App sandbox file accesses. XJTU
+allow shared_app unknown_app_data_file:dir create_dir_perms;
+allow shared_app unknown_app_data_file:notdevfile_class_set create_file_perms;
+allow shared_app social_app_data_file:dir create_dir_perms;
+allow shared_app social_app_data_file:notdevfile_class_set create_file_perms;
+allow shared_app work_app_data_file:dir create_dir_perms;
+allow shared_app work_app_data_file:notdevfile_class_set create_file_perms;
+allow shared_app free_app_data_file:dir create_dir_perms;
+allow shared_app free_app_data_file:notdevfile_class_set create_file_perms;
+allow shared_app finance_app_data_file:dir create_dir_perms;
+allow shared_app finance_app_data_file:notdevfile_class_set create_file_perms;
+allow shared_app normal_app_data_file:dir create_dir_perms;
+allow shared_app normal_app_data_file:notdevfile_class_set create_file_perms;
+allow shared_app shopping_app_data_file:dir create_dir_perms;
+allow shared_app shopping_app_data_file:notdevfile_class_set create_file_perms;
+
+

@@ -1,0 +1,29 @@
+###
+### Apps signed with the release key (testkey in AOSP).
+###
+
+type release_app, domain;
+permissive release_app;
+app_domain(release_app)
+platform_app_domain(release_app)
+# Access the network.
+net_domain(release_app)
+# Access bluetooth.
+bluetooth_domain(release_app)
+unconfined_domain(release_app)
+
+# App sandbox file accesses. XJTU
+allow release_app unknown_app_data_file:dir create_dir_perms;
+allow release_app unknown_app_data_file:notdevfile_class_set create_file_perms;
+allow release_app social_app_data_file:dir create_dir_perms;
+allow release_app social_app_data_file:notdevfile_class_set create_file_perms;
+allow release_app work_app_data_file:dir create_dir_perms;
+allow release_app work_app_data_file:notdevfile_class_set create_file_perms;
+allow release_app free_app_data_file:dir create_dir_perms;
+allow release_app free_app_data_file:notdevfile_class_set create_file_perms;
+allow release_app finance_app_data_file:dir create_dir_perms;
+allow release_app finance_app_data_file:notdevfile_class_set create_file_perms;
+allow release_app normal_app_data_file:dir create_dir_perms;
+allow release_app normal_app_data_file:notdevfile_class_set create_file_perms;
+allow release_app shopping_app_data_file:dir create_dir_perms;
+allow release_app shopping_app_data_file:notdevfile_class_set create_file_perms;

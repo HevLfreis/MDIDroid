@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!--
+
+  Defines the layout of the splash screen that displays the security
+  settings required for an application and requests the confirmation of the
+  user before it is installed.
+-->
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+        layout="@layout/app_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/domain_snippet"/>
+
+    <ImageView
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/dividerHorizontal"
+            android:visibility="gone" />
+    
+         
+        <TextView
+        android:id="@+id/install_confirm_question"
+        style="@style/padded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        android:paddingTop="4dip"
+        android:paddingBottom="4dip"
+        android:text="@string/choose_domain"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <FrameLayout
+        android:id="@+id/filler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:visibility="gone">
+    </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="5dip" >
+                <RadioGroup
+        android:id="@+id/domainradio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radionormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/normal"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioshopping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shopping"
+             android:textSize="20sp"  />
+
+        <RadioButton
+            android:id="@+id/radiofinance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/finance" 
+             android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/radiowork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/work" 
+             android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/radiosocial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/social" 
+             android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/radiofree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/free" 
+             android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/radiounknown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unknown" 
+             android:textSize="20sp" />
+    </RadioGroup>
+        </LinearLayout>
+   
+
+    <!-- OK confirm and cancel buttons.  -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:divider="?android:attr/dividerHorizontal"
+            android:showDividers="beginning">
+
+        <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:measureWithLargestChild="true">
+
+            <LinearLayout android:id="@+id/leftSpacer"
+                    android:layout_weight="0.25"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
+
+            <Button android:id="@+id/cancel_button_domain"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:text="@string/cancel"
+                    android:maxLines="2"
+                    style="?android:attr/buttonBarButtonStyle" />
+
+            <Button android:id="@+id/ok_button_domain"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:text="@string/install"
+                    android:maxLines="2"
+                    android:filterTouchesWhenObscured="true"
+                    style="?android:attr/buttonBarButtonStyle" />
+
+            <LinearLayout android:id="@+id/rightSpacer"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

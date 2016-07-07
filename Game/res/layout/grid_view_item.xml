@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="120dp"
+    android:orientation="vertical" >
+    
+    <View
+           android:layout_width="fill_parent"
+           android:layout_height="3.0px"
+           android:layout_marginLeft="1.0px"
+           android:layout_marginRight="1.0px"
+           android:background="#ffc2c8cd"
+           android:layout_alignParentTop="true" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+        
+        
+        
+        <View
+           android:layout_width="3.0px"
+           android:layout_height="fill_parent"
+           android:layout_marginLeft="1.0px"
+           android:layout_marginRight="1.0px"
+           android:background="#ffc2c8cd"
+           android:layout_alignParentLeft="true"
+            />
+
+    <TextView
+        android:id="@+id/textview_griditem"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="TextView"
+        android:textSize="40sp" />
+    
+     <View
+           android:layout_width="3.0px"
+           android:layout_height="fill_parent"
+           android:layout_marginLeft="1.0px"
+           android:layout_marginRight="1.0px"
+           android:background="#ffc2c8cd"
+           android:layout_alignParentRight="true"
+            />
+    
+    </RelativeLayout>
+
+    <View
+           android:layout_width="fill_parent"
+           android:layout_height="3.0px"
+           android:layout_marginLeft="1.0px"
+           android:layout_marginRight="1.0px"
+           android:background="#ffc2c8cd"
+           android:layout_alignParentBottom="true"  />
+
+</RelativeLayout>

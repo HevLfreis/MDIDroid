@@ -1,0 +1,29 @@
+###
+### Apps signed with the media key.
+###
+
+type media_app, domain;
+permissive media_app;
+app_domain(media_app)
+platform_app_domain(media_app)
+# Access the network.
+net_domain(media_app)
+unconfined_domain(media_app)
+relabelto_domain(media_app)
+allow media_app download_file:dir relabelto;
+
+# App sandbox file accesses. XJTU
+allow media_app unknown_app_data_file:dir create_dir_perms;
+allow media_app unknown_app_data_file:notdevfile_class_set create_file_perms;
+allow media_app social_app_data_file:dir create_dir_perms;
+allow media_app social_app_data_file:notdevfile_class_set create_file_perms;
+allow media_app work_app_data_file:dir create_dir_perms;
+allow media_app work_app_data_file:notdevfile_class_set create_file_perms;
+allow media_app free_app_data_file:dir create_dir_perms;
+allow media_app free_app_data_file:notdevfile_class_set create_file_perms;
+allow media_app finance_app_data_file:dir create_dir_perms;
+allow media_app finance_app_data_file:notdevfile_class_set create_file_perms;
+allow media_app normal_app_data_file:dir create_dir_perms;
+allow media_app normal_app_data_file:notdevfile_class_set create_file_perms;
+allow media_app shopping_app_data_file:dir create_dir_perms;
+allow media_app shopping_app_data_file:notdevfile_class_set create_file_perms;

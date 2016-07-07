@@ -1,0 +1,29 @@
+###
+### Apps signed with the platform key.
+###
+
+type platform_app, domain;
+permissive platform_app;
+app_domain(platform_app)
+platform_app_domain(platform_app)
+# Access the network.
+net_domain(platform_app)
+# Access bluetooth.
+bluetooth_domain(platform_app)
+unconfined_domain(platform_app)
+
+# App sandbox file accesses. XJTU
+allow platform_app unknown_app_data_file:dir create_dir_perms;
+allow platform_app unknown_app_data_file:notdevfile_class_set create_file_perms;
+allow platform_app social_app_data_file:dir create_dir_perms;
+allow platform_app social_app_data_file:notdevfile_class_set create_file_perms;
+allow platform_app work_app_data_file:dir create_dir_perms;
+allow platform_app work_app_data_file:notdevfile_class_set create_file_perms;
+allow platform_app free_app_data_file:dir create_dir_perms;
+allow platform_app free_app_data_file:notdevfile_class_set create_file_perms;
+allow platform_app finance_app_data_file:dir create_dir_perms;
+allow platform_app finance_app_data_file:notdevfile_class_set create_file_perms;
+allow platform_app normal_app_data_file:dir create_dir_perms;
+allow platform_app normal_app_data_file:notdevfile_class_set create_file_perms;
+allow platform_app shopping_app_data_file:dir create_dir_perms;
+allow platform_app shopping_app_data_file:notdevfile_class_set create_file_perms;
